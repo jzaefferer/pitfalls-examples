@@ -1,0 +1,16 @@
+{
+  "name": "pitfalls-examples",
+  "version": "1.0.0",
+  "description": "Application Examples for Pitfalls Talk",
+  "author": "Jörn Zaefferer",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jzaefferer/pitfalls-examples.git"
+  },
+  "dependencies": {
+    "connect": "~>1.8.1"
+  },
+  "engines": {
+    "node": "~>0.6.0"
+  }
+}
