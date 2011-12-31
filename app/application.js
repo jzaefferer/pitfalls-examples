@@ -6,13 +6,17 @@ SimpleHistory.start(function(url) {
 	if (index) {
 		if (parts.query.scroll) {
 			var scrollTop = +parts.query.scroll;
-			$(document.body).scrollTop(scrollTop);
+			// lil' delay to deal with iOS
+			setTimeout(function() {
+				window.scrollTo(0, scrollTop);
+			}, 50);
 		}
 	} else {
 		$("#photo img").attr("src", path + ".jpg");
 		$("#photo p").text( $("a[href='" + path + "'] p").text() );
 	}
 });
+
 $("a:not([href^=http])").click(function(event) {
 	if (event.metaKey || event.shiftKey || event.ctrlKey) {
 		return;
@@ -20,13 +24,14 @@ $("a:not([href^=http])").click(function(event) {
 	event.preventDefault();
 	SimpleHistory.pushState(this.href);
 });
+
 $(document).scroll(function(event) {
 	var parts = URL.parse(location.href);
 	if (parts.path !== "/") {
 		return;
 	}
 	var scrollTop = $(document).scrollTop();
-	if (parts.query.scroll != null && scrollTop !== +parts.query.scroll) {
+	if (scrollTop !== +parts.query.scroll) {
 		SimpleHistory.replaceState(location.pathname + "?scroll=" + scrollTop);
 	}
 }.debounce());
