@@ -17,15 +17,7 @@ SimpleHistory.start(function(url) {
 	}
 });
 
-$("a:not([href^=http])").click(function(event) {
-	if (event.metaKey || event.shiftKey || event.ctrlKey) {
-		return;
-	}
-	event.preventDefault();
-	SimpleHistory.pushState(this.href);
-});
-
-$(document).scroll(function(event) {
+function storeScroll() {
 	var parts = URL.parse(location.href);
 	if (parts.path !== "/") {
 		return;
@@ -34,4 +26,16 @@ $(document).scroll(function(event) {
 	if (scrollTop !== +parts.query.scroll) {
 		SimpleHistory.replaceState(location.pathname + "?scroll=" + scrollTop);
 	}
-}.debounce());
+}
+
+$("a:not([href^=http])").click(function(event) {
+	if (event.metaKey || event.shiftKey || event.ctrlKey) {
+		return;
+	}
+	// interesting alternative, but breaks when reloading a page
+	//storeScroll();
+	event.preventDefault();
+	SimpleHistory.pushState(this.href);
+});
+
+$(document).scroll(storeScroll.debounce());
