@@ -12,8 +12,9 @@ SimpleHistory.start(function(url) {
 			}, 50);
 		}
 	} else {
-		$("#photo img").attr("src", path.replace("/photos", "") + ".jpg");
-		$("#photo p").text( $("a[href='" + path + "'] p").text() );
+		var photo = photos.lookup(path);
+		$("#photo img").attr("src", photo.src);
+		$("#photo p").text( photo.description );
 	}
 });
 

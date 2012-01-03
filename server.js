@@ -4,6 +4,8 @@ var connect = require('connect');
 var fs = require('fs');
 var handlebars = require('handlebars');
 
+var photos = require('./app/gallery/photos');
+
 var httpPort = 8085;
 var httpHost = "localhost";
 var staticDir = "app";
@@ -18,12 +20,18 @@ var template = handlebars.compile( homeTemplate );
 
 function route(app) {
   app.get(routes.photo, function(request, response, next) {
-    // TODO lookup description from same datasource as client
-    // also use that to generate list of images on index
-    response.end(template({indexActive: "", src: request.url.replace("/photos", "") + ".jpg", description: "..."}));
+    var photo = photos.lookup(request.url);
+    response.end(template({
+      src: photo.src,
+      description: photo.description,
+      photos: photos.data
+    }));
   });
   app.get(routes.home, function(request, response, next) {
-    response.end(template({indexActive: "indexActive"}));
+    response.end(template({
+      indexActive: "indexActive",
+      photos: photos.data
+    }));
   });
 }
 
