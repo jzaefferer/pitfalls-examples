@@ -1,3 +1,4 @@
+//setTimeout(function() {
 SimpleHistory.start(function(url) {
 	var parts = URL.parse(url);
 	var path = parts.path;
@@ -16,7 +17,9 @@ SimpleHistory.start(function(url) {
 		$("#photo img").attr("src", photo.src);
 		$("#photo p").text( photo.description );
 	}
+	//$("#status").text("ready");
 });
+//}, 1000);
 
 function storeScroll() {
 	var parts = URL.parse(location.href);
