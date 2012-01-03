@@ -12,7 +12,7 @@ SimpleHistory.start(function(url) {
 			}, 50);
 		}
 	} else {
-		$("#photo img").attr("src", path + ".jpg");
+		$("#photo img").attr("src", path.replace("/photos", "") + ".jpg");
 		$("#photo p").text( $("a[href='" + path + "'] p").text() );
 	}
 });

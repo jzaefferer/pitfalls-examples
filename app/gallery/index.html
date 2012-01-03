@@ -3,49 +3,49 @@
 <head>
 	<meta charset=utf-8>
 	<title>Photo Gallery</title>
-	<link rel="stylesheet" href="/application.css">
+	<link rel="stylesheet" href="/gallery/gallery.css">
 </head>
-<body>
+<body class="{{indexActive}}">
 	<div id="index">
 		<ul class="listing">
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1165">
+				<a href="/photos/2011-09-29-everglades/DSC_1165">
 					<img src="/2011-09-29-everglades/DSC_1165.jpg">
 					<p>Not a crocodile</p>
 				</a>
 			</li>
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1166">
+				<a href="/photos/2011-09-29-everglades/DSC_1166">
 					<img src="/2011-09-29-everglades/DSC_1166.jpg">
 					<p>Another not a crocodile</p>
 				</a>
 			</li>
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1211">
+				<a href="/photos/2011-09-29-everglades/DSC_1211">
 					<img src="/2011-09-29-everglades/DSC_1211.jpg">
 					<p>Alligator coming at you</p>
 				</a>
 			</li>
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1217">
+				<a href="/photos/2011-09-29-everglades/DSC_1217">
 					<img src="/2011-09-29-everglades/DSC_1217.jpg">
 					<p>Alligator in the wild</p>
 				</a>
 			</li>
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1223">
+				<a href="/photos/2011-09-29-everglades/DSC_1223">
 					<img src="/2011-09-29-everglades/DSC_1223.jpg">
 					<p>Alligator with greens</p>
 				</a>
 			</li>
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1218">
+				<a href="/photos/2011-09-29-everglades/DSC_1218">
 					<img src="/2011-09-29-everglades/DSC_1218.jpg">
 					<p>Unzoom wild alligator</p>
 				</a>
 			</li>
 			<li>
-				<a href="/2011-09-29-everglades/DSC_1221">
+				<a href="/photos/2011-09-29-everglades/DSC_1221">
 					<img src="/2011-09-29-everglades/DSC_1221.jpg">
 					<p>Alligator crossing</p>
 				</a>
@@ -53,14 +53,14 @@
 		</ul>
 	</div>
 	<div id="photo">
-		<img>
-		<p>...</p>
+		<img src="{{src}}">
+		<p>{{description}}</p>
 	</div>
 	<script src="/vendor/viewporter.js"></script>
 	<script src="/vendor/simple-history.js"></script>
 	<script src="/vendor/jquery-1.7.1.js"></script>
 	<script src="/lib/augment-debounce.js"></script>
 	<script src="/lib/url.js"></script>
-	<script src="/application.js"></script>
+	<script src="/gallery/gallery.js"></script>
 </body>
 </html>
