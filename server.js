@@ -4,15 +4,12 @@ var connect = require('connect');
 var fs = require('fs');
 var handlebars = require('handlebars');
 
-var defaultFile = "/gallery/index.html";
 var httpPort = 8085;
 var httpHost = "localhost";
 var staticDir = "app";
 var routes = {
   home: /^\/$/,
-  photo: /^\/photos\/.+/,
-  static: /\.(?:js|jpg|png|json|css|ico|html|manifest|mp3|txt)(?:\?.+)?$/,
-  wildcard: /.*/
+  photo: /^\/photos\/.+/
 };
 
 // TODO tell nodemon to restart when this changes
@@ -27,13 +24,6 @@ function route(app) {
   });
   app.get(routes.home, function(request, response, next) {
     response.end(template({indexActive: "indexActive"}));
-  });
-  // TODO drop wildcard
-  app.get(routes.wildcard, function(request, response, next) {
-    if (!routes.static.test(request.url)) {
-      request.url = defaultFile;
-    }
-    next();
   });
 }
 
