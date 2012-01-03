@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Sound Image Pair</title>
+	<link rel="stylesheet" href="/lib/shared.css">
+</head>
+<body>
+	<div id="status"></div>
+	<form id="search" method="GET">
+		<fieldset>
+			<legend>Search for something</legend>
+			<input type="text" placeholder="Your search term" id="search-term" name="term" value="{{term}}">
+		</fieldset>
+	</form>
+	<div id="pair-result">
+		<h3 id="audio-title">{{soundcloud.title}}</h3>
+		<audio id="audio-result" controls="controls" src="{{soundcloud.stream_url}}"></audio>
+		<h3 id="img-title">{{flickr.title}}</h3>
+		<img id="img-result" src="{{flickr.src}}">
+	</audio>
+	</div>
+	<script src="/vendor/viewporter.js"></script>
+	<script src="/vendor/simple-history.js"></script>
+	<script src="/vendor/jquery-1.7.1.js"></script>
+	<script src="/lib/url.js"></script>
+	<script src="/sound-image-pair/main.js"></script>
+</body>
+</html>
