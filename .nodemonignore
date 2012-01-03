@@ -1,0 +1,3 @@
+# .nodemonignore file
+/app/*
+.git
