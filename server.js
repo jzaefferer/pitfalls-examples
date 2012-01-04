@@ -7,7 +7,7 @@ var url = require('url');
 
 var photos = require('./app/gallery/photos');
 
-var pair = require('./sound-image-pair');
+var pair = require('./lib/sound-image-pair');
 
 var httpPort = 8085;
 var httpHost = "localhost";
