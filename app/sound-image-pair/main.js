@@ -1,8 +1,5 @@
 SimpleHistory.start(function() {
-	var term = URL.parseQueryString(location.search).term;
-	if (!term) {
-		return;
-	}
+	var term = URL.parseQueryString(location.search).term || 'bird';
 	$('#search-term').val(term);
 	$('#status').text("loading");
 	$.getJSON('/pair/result', {term: term}, function(result) {
