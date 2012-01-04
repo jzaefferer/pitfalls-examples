@@ -16,6 +16,7 @@ exports.get = function(tag, callback) {
 			callback(content);
 		}
 	}
+	// see http://www.flickr.com/services/api/flickr.photos.search.html
 	http.get({host: 'api.flickr.com', path: '/services/rest/?' + querystring.stringify({
 		nojsoncallback: 1,
 		format: 'json',
@@ -43,6 +44,7 @@ exports.get = function(tag, callback) {
 		});
 	});
 
+	// see http://developers.soundcloud.com/docs/api/tracks#filtering
 	var sc_client_id = '515a1fcab907701f29fe6f1f7dabc556';
 	http.get({host: 'api.soundcloud.com', path: '/tracks.json?' + querystring.stringify({
 		// TODO try to limit to one result
