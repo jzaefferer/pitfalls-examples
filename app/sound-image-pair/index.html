@@ -17,7 +17,9 @@
 		<h3 id="audio-title">{{soundcloud.title}}</h3>
 		<audio id="audio-result" controls="controls" src="{{soundcloud.stream_url}}"></audio>
 		<h3 id="img-title">{{flickr.title}}</h3>
-		<img id="img-result" src="{{flickr.src}}">
+		<a id="img-link" href="{{flickr.href}}">
+			<img id="img-result" src="{{flickr.src}}">
+		</a>
 	</audio>
 	</div>
 	<script src="/vendor/viewporter.js"></script>

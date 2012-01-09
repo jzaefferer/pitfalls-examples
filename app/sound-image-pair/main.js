@@ -4,8 +4,11 @@ SimpleHistory.start(function() {
 	$('#status').text("loading");
 	$.getJSON('/pair/result', {term: term}, function(result) {
 		$('#status').text('done');
+
 		$('#img-title').text(result.flickr.title);
+		$('#img-link').attr('href', result.flickr.href);
 		$('#img-result').attr('src', result.flickr.src);
+
 		$('#audio-title').text(result.soundcloud.title);
 		$('#audio-result').attr('src', result.soundcloud.stream_url);
 	});
