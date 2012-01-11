@@ -36,3 +36,9 @@ Open the displayed URL.
 * http://i.imgur.com/pd50m.jpg
 * http://i.imgur.com/CtcWF.jpg
 * http://www.w3.org/html/logo/
+
+### HTML5 history API
+
+* [Browser support for history API on caniuse.com](http://caniuse.com/#search=history)
+* [Android ticket for regression on history API](http://code.google.com/p/android/issues/detail?id=23979)
+* [History API on iOS under 'popup security model', requires user interaction](http://stackoverflow.com/questions/6161701/is-history-api-broken-on-ios-location-bar-doesnt-update-on-pushstate)
