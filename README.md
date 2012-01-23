@@ -42,3 +42,7 @@ Open the displayed URL.
 * [Browser support for history API on caniuse.com](http://caniuse.com/#search=history)
 * [Android ticket for regression on history API](http://code.google.com/p/android/issues/detail?id=23979)
 * [History API on iOS under 'popup security model', requires user interaction](http://stackoverflow.com/questions/6161701/is-history-api-broken-on-ios-location-bar-doesnt-update-on-pushstate)
+
+### Client side error handling
+
+Not yet covered by examples, but [this blog post shows options for tracking those frontend errors](http://backstage.soundcloud.com/2011/11/front-end-javascript-bug-tracking/).
