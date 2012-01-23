@@ -36,6 +36,7 @@ Open the displayed URL.
 * http://i.imgur.com/pd50m.jpg
 * http://i.imgur.com/CtcWF.jpg
 * http://www.w3.org/html/logo/
+* Nodejs Rocket Turtle, by substack: http://substack.net/images/node_turtle.png
 
 ### HTML5 history API
 
