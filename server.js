@@ -53,7 +53,7 @@ function route(app) {
   });
   app.get(routes.errorlogger, function(request, response, next) {
     var data = url.parse(request.url, true).query;
-    console.log("[CLIENT " + data.type + " error]", data.message, data.at ? data.at : data.url);
+    console.log("[CLIENT " + data.type + " error]", data.message, data.detail);
     response.end("");
   });
 }
