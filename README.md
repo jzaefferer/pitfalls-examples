@@ -16,8 +16,7 @@ Open the displayed URL.
 
 ## Further resources
 
-### On API Design
-
+* [Single page application (SPA) described by Wikipedia](http://en.wikipedia.org/wiki/Single-page_application)
 * [Mobile API Design - Thinking Beyond REST](http://www.stereoplex.com/blog/mobile-api-design-thinking-beyond-rest)
 
 ### Code-sharing frameworks
