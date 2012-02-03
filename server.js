@@ -16,7 +16,8 @@ var routes = {
   home: /^\/$/,
   photo: /^\/photos\/.+/,
   pair: /^\/pair$/,
-  pairResult: /^\/pair\/result$/
+  pairResult: /^\/pair\/result$/,
+  errorlogger: /^\/errorlogger$/
 };
 
 // TODO tell nodemon to restart when these change
@@ -42,13 +43,18 @@ function route(app) {
     var term = url.parse(request.url, true).query.term || 'bird';
     pair.get(term, function(result) {
       result.term = term;
-      response.end(pairTemplate(result))
+      response.end(pairTemplate(result));
     });
   });
   app.get(routes.pairResult, function(request, response, next) {
     pair.get(url.parse(request.url, true).query.term, function(result) {
       response.end(JSON.stringify(result));
     });
+  });
+  app.get(routes.errorlogger, function(request, response, next) {
+    var data = url.parse(request.url, true).query;
+    console.log("[CLIENT " + data.type + " error]", data.message, data.at ? data.at : data.url);
+    response.end("");
   });
 }
 

@@ -14,9 +14,7 @@ SimpleHistory.start(function() {
 	});
 });
 
-//*
 $('#search').submit(function(event) {
 	event.preventDefault();
 	SimpleHistory.pushState(location.pathname + "?term=" + $('#search-term').val());
 });
-//*/
