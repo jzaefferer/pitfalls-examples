@@ -37,6 +37,7 @@ photos.data = [
 ];
 photos.data.forEach(function(photo) {
 	photo.url = "/photos" + photo.src.replace(/\.jpg$/, "");
+	photo.srcSmall = photo.src.replace(/^\/alligators/, "/alligators/thumbnails");
 });
 photos.lookup = function(url) {
 	return photos.data.filter(function(photo) {

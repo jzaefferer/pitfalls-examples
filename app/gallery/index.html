@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="/gallery/gallery.css">
 </head>
 <body class="{{indexActive}}">
+	<button id="breakz">Break Me</button>
 	<audio controls="controls">
 		<source src="/samples/Vidian_-_Making_Me_Nervous_cropped.mp3" type="audio/mp3">
 		<source src="/samples/Vidian_-_Making_Me_Nervous_cropped.ogg" type="audio/ogg">
@@ -18,7 +19,7 @@
 			{{#each photos}}
 				<li>
 					<a href="{{url}}">
-						<img src="{{src}}">
+						<img src="{{srcSmall}}">
 						<p>{{description}}</p>
 					</a>
 				</li>
@@ -34,6 +35,7 @@
 	<script src="/vendor/jquery-1.7.1.js"></script>
 	<script src="/lib/augment-debounce.js"></script>
 	<script src="/lib/url.js"></script>
+	<script src="/gallery/breakz.js"></script>
 	<script src="/gallery/photos.js"></script>
 	<script src="/gallery/gallery.js"></script>
 </body>
