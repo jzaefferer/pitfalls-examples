@@ -4,7 +4,9 @@ $("#breakz").click(function() {
 });
 
 function logError(type, message, detail) {
-	console.log(type, message, detail);
+	if (window.console) {
+		console.log(type, message, detail);
+	}
 	$.get("/errorlogger", {
 		type: type,
 		message: message,
@@ -13,7 +15,8 @@ function logError(type, message, detail) {
 }
 
 $(window).bind("error", function(event) {
-	console.log("useless error event", event);
+	var original = event.originalEvent;
+	logError("global", original.message, original.filename + ":" + original.lineno);
 });
 window.onerror = function(message, file, line) {
 	logError("global", message, file + ":" + line);
