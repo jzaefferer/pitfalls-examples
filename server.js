@@ -13,11 +13,11 @@ var httpPort = 8085;
 var httpHost = "localhost";
 var staticDir = "app";
 var routes = {
-  home: /^\/$/,
+  home: "/",
   photo: /^\/photos\/.+/,
-  pair: /^\/pair$/,
-  pairResult: /^\/pair\/result$/,
-  errorlogger: /^\/errorlogger$/
+  pair: "/pair",
+  pairResult: "/pair/result",
+  errorlogger: "/errorlogger"
 };
 
 // TODO tell nodemon to restart when these change
