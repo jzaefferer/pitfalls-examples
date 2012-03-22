@@ -16,7 +16,8 @@
   "dependencies": {
     "connect": "1.8.x",
     "handlebars": "1.0.2beta",
-    "formidable": "1.0.x"
+    "formidable": "1.0.x",
+    "request": "2.9.153"
   },
   "main": "server.js",
   "engines": {
