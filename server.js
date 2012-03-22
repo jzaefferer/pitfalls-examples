@@ -4,6 +4,8 @@ var connect = require('connect');
 var fs = require('fs');
 var handlebars = require('handlebars');
 var url = require('url');
+var formidable = require('formidable');
+var util = require('util');
 
 var photos = require('./app/gallery/photos');
 
@@ -51,16 +53,17 @@ function route(app) {
       response.end(JSON.stringify(result));
     });
   });
-  app.get(routes.errorlogger, function(request, response, next) {
-    var data = url.parse(request.url, true).query;
-    console.log("[CLIENT " + data.type + " error]", data.message, data.detail);
-    response.end("");
+  app.post(routes.errorlogger, function(request, response, next) {
+    var form = new formidable.IncomingForm();
+    form.parse(request, function(err, fields, files) {
+      console.log("[CLIENT " + fields.type + " error]", fields.message, fields.detail);
+      response.end("");
+    });
   });
 }
 
 connect.createServer(
   connect.router(route),
-  //connect.logger(),
   connect.static(staticDir)
 ).listen(httpPort, httpHost, function() {
   console.log('HTTP Server running at http://%s:%d', httpHost, httpPort);

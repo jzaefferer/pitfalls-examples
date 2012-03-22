@@ -7,9 +7,16 @@
     "type": "git",
     "url": "git@github.com:jzaefferer/pitfalls-examples.git"
   },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
   "dependencies": {
-    "connect": "~>1.8.1",
-    "handlebars": "1.0.2beta"
+    "connect": "1.8.x",
+    "handlebars": "1.0.2beta",
+    "formidable": "1.0.x"
   },
   "main": "server.js",
   "engines": {
