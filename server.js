@@ -43,13 +43,13 @@ function route(app) {
   });
   app.get(routes.pair, function(request, response, next) {
     var term = url.parse(request.url, true).query.term || 'bird';
-    pair.get(term, function(result) {
+    pair(term, function(result) {
       result.term = term;
       response.end(pairTemplate(result));
     });
   });
   app.get(routes.pairResult, function(request, response, next) {
-    pair.get(url.parse(request.url, true).query.term, function(result) {
+    pair(url.parse(request.url, true).query.term, function(result) {
       response.end(JSON.stringify(result));
     });
   });
