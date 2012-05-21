@@ -15,6 +15,8 @@ function logError(type, message, detail) {
 }
 
 window.onerror = function(message, file, line) {
+	// self-destruct to avoid logging more then once, generally not helpful
+	window.onerror = function() {};
 	logError("global", message, file + ":" + line);
 };
 $(document).ajaxError(function(event, xhr, options, error) {
