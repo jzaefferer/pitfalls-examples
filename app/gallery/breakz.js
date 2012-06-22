@@ -19,6 +19,7 @@ window.onerror = function(message, file, line) {
 	window.onerror = function() {};
 	logError("global", message, file + ":" + line);
 };
-$(document).ajaxError(function(event, xhr, options, error) {
+// log only the first ajaxError to avoid useless duplicates
+$(document).one("ajaxError", function(event, xhr, options, error) {
 	logError("ajax", error + ":" + xhr.responseText, options.url);
 });
